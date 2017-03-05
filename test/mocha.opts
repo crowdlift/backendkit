@@ -1,0 +1,8 @@
+--slow 20
+--ui bdd
+--timeout 200
+--check-leaks
+--full-trace
+--recursive
+--reporter test/istanbul.reporter.js
+--compilers js:babel-core/register

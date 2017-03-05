@@ -1,0 +1,52 @@
+{
+  "name": "crowdqueue-backend",
+  "version": "0.1.0",
+  "main": "src/main.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "rollup src/main.js --output dist/bundle.js --config",
+    "build:watch": "rollup src/main.js --output dist/bundle.js --config --watch",
+    "lint": "eslint src 'test/**/*.js'",
+    "pretest": "npm-run-all build lint",
+    "test": "yarn test:node",
+    "test:node": "cross-env NODE_ENV=test mocha",
+    "test:watch": "cross-env NODE_ENV=test mocha --watch"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.23.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.22.0",
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-dev-expression": "^0.2.1",
+    "babel-plugin-istanbul": "^4.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-1": "^6.22.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "cross-env": "^3.2.3",
+    "eslint": "^3.17.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-chai-expect": "^1.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-prefer-object-spread": "^1.1.0",
+    "eslint-plugin-react": "^6.10.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "npm-run-all": "^4.0.2",
+    "rollup": "^0.41.4",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-inject": "^2.0.0",
+    "rollup-plugin-istanbul": "^1.1.0",
+    "rollup-plugin-json": "^2.1.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-yaml": "^1.0.0",
+    "rollup-watch": "^3.2.2"
+  }
+}
