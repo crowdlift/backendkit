@@ -1,8 +1,6 @@
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-	typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	(factory((global['crowdqueue-backend'] = global['crowdqueue-backend'] || {})));
-}(this, (function (exports) { 'use strict';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 /**
  * Adds two numbers together, returning the sum.
@@ -52,8 +50,4 @@ var multiply = function multiply(n, m) {
 };
 
 exports.multiply = multiply;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
 //# sourceMappingURL=bundle.js.map
