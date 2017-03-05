@@ -4,14 +4,13 @@
   "main": "src/main.js",
   "license": "UNLICENSED",
   "scripts": {
+    "prebuild": "yarn lint",
     "build": "rollup src/main.js --output dist/bundle.js --config",
     "build:watch": "rollup src/main.js --output dist/bundle.js --config --watch",
-    "lint": "eslint src 'test/**/*.js'",
-    "pretest": "npm-run-all build lint",
-    "test": "yarn test:node",
-    "test:node": "cross-env NODE_ENV=test mocha",
-    "test:watch": "cross-env NODE_ENV=test mocha --watch"
+    "lint": "eslint src test",
     "pretest": "TEST=1 yarn build",
+    "test": "NODE_ENV=test mocha",
+    "test:watch": "NODE_ENV=test mocha --watch"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0"
@@ -29,7 +28,6 @@
     "babel-preset-stage-1": "^6.22.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
-    "cross-env": "^3.2.3",
     "eslint": "^3.17.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-chai-expect": "^1.1.1",

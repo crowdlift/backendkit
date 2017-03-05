@@ -1,10 +1,4 @@
 /*
-TODO: add modules?
-- rollup-plugin-eslint
-- rollup-plugin-instanbul
-- filesize
-- uglify
-
 See:
 https://github.com/rollup/rollup/wiki/Plugins
 https://github.com/rollup/rollup/wiki/JavaScript-API
@@ -22,10 +16,9 @@ const pkg = require('./package.json');
 
 const external = Object.keys(pkg.dependencies);
 
-  format: 'umd',
 const config = {
+  format: 'cjs',
   sourceMap: true,
-  moduleName: pkg.name,
   plugins: [
     nodeResolve({
       jsnext: true,
