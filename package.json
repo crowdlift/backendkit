@@ -1,8 +1,12 @@
 {
-  "name": "crowdqueue-backend",
+  "name": "backendkit",
   "version": "0.1.0",
   "main": "dist/example/bundle.js",
+  "description": "BackendKit for node.",
+  "private": true,
   "license": "UNLICENSED",
+  "repository": "crowdlift/backendkit",
+  "homepage": "https://github.com/crowdlift/backendkit",
   "scripts": {
     "prebuild": "npm-run-all -p clean lint",
     "build": "rollup example/src/multiply.js --output dist/example/bundle.js --config",
