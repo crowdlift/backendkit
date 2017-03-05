@@ -50,10 +50,6 @@ export default {
       externalHelpers: false,
       runtimeHelpers: true,
     }),
-    // babel(babelrc()),
-    // istanbul({
-    //   exclude: ['test/**/*', 'node_modules/**/*'],
-    // }),
   ],
   external,
 };
