@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild": "yarn lint",
     "build": "rollup src/main.js --output dist/bundle.js --config",
-    "build:watch": "rollup src/main.js --output dist/bundle.js --config --watch",
+    "build:watch": "yarn build -- --watch",
     "lint": "eslint src test",
     "pretest": "TEST=1 yarn build",
     "test": "NODE_ENV=test mocha",
