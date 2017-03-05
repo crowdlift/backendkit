@@ -4,5 +4,5 @@
 --check-leaks
 --full-trace
 --recursive
---reporter test/istanbul.reporter.js
+--reporter lib/reporters/istanbul.js
 --compilers js:babel-core/register

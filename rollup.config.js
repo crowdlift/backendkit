@@ -48,7 +48,7 @@ const config = {
   external,
 };
 
-if (!process.env.TEST) {
+if (!process.env.QUIET) {
   config.plugins.push(filesize());
 }
 

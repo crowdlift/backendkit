@@ -1,5 +1,6 @@
 import { strictEqual } from 'assert';
-import { multiply } from '../';
+import { multiply } from '../../src/multiply';
+
 
 describe('multiply', () => {
   it('returns 0 when either argument is 0', () => {

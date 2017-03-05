@@ -1,16 +1,17 @@
 {
   "name": "crowdqueue-backend",
   "version": "0.1.0",
-  "main": "src/main.js",
+  "main": "dist/example/bundle.js",
   "license": "UNLICENSED",
   "scripts": {
-    "prebuild": "yarn lint",
-    "build": "rollup src/main.js --output dist/bundle.js --config",
+    "prebuild": "npm-run-all -p clean lint",
+    "build": "rollup example/src/multiply.js --output dist/example/bundle.js --config",
     "build:watch": "yarn build -- --watch",
-    "lint": "eslint src test",
-    "pretest": "TEST=1 yarn build",
-    "test": "NODE_ENV=test mocha",
-    "test:watch": "NODE_ENV=test mocha --watch"
+    "clean": "rimraf dist",
+    "lint": "eslint example/src example/test",
+    "pretest": "QUIET=1 yarn build",
+    "test": "NODE_ENV=test mocha --opts mocha.opts example/test/**/*-test.js",
+    "test:watch": "yarn test -- --watch"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0"
@@ -38,6 +39,7 @@
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
     "npm-run-all": "^4.0.2",
+    "rimraf": "^2.6.1",
     "rollup": "^0.41.4",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^7.0.0",
@@ -46,6 +48,7 @@
     "rollup-plugin-json": "^2.1.0",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-yaml": "^1.0.0",
-    "rollup-watch": "^3.2.2"
+    "rollup-watch": "^3.2.2",
+    "testdouble": "^1.11.2"
   }
 }
