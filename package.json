@@ -10,7 +10,7 @@
     "clean": "rimraf dist",
     "lint": "eslint example/src example/test",
     "pretest": "QUIET=1 yarn build",
-    "test": "NODE_ENV=test mocha --opts mocha.opts example/test/**/*-test.js",
+    "test": "NODE_ENV=test mocha --opts mocha.opts example/test/**/*.test.js",
     "test:watch": "yarn test -- --watch"
   },
   "dependencies": {
@@ -49,6 +49,7 @@
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-yaml": "^1.0.0",
     "rollup-watch": "^3.2.2",
-    "testdouble": "^1.11.2"
+    "testdouble": "^1.11.2",
+    "testdouble-chai": "^0.5.0"
   }
 }
