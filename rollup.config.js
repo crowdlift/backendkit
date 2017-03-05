@@ -16,13 +16,14 @@ import commonjs from 'rollup-plugin-commonjs';
 import inject from 'rollup-plugin-inject';
 import json from 'rollup-plugin-json';
 import yaml from 'rollup-plugin-yaml';
+import filesize from 'rollup-plugin-filesize';
 
 const pkg = require('./package.json');
 
 const external = Object.keys(pkg.dependencies);
 
-export default {
   format: 'umd',
+const config = {
   sourceMap: true,
   moduleName: pkg.name,
   plugins: [
@@ -53,3 +54,9 @@ export default {
   ],
   external,
 };
+
+if (!process.env.TEST) {
+  config.plugins.push(filesize());
+}
+
+export default config;

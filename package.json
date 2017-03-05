@@ -11,6 +11,7 @@
     "test": "yarn test:node",
     "test:node": "cross-env NODE_ENV=test mocha",
     "test:watch": "cross-env NODE_ENV=test mocha --watch"
+    "pretest": "TEST=1 yarn build",
   },
   "dependencies": {
     "babel-runtime": "^6.23.0"
@@ -42,6 +43,7 @@
     "rollup": "^0.41.4",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-filesize": "^1.0.1",
     "rollup-plugin-inject": "^2.0.0",
     "rollup-plugin-json": "^2.1.0",
     "rollup-plugin-node-resolve": "^2.0.0",
