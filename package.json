@@ -1,13 +1,14 @@
 {
   "name": "backendkit",
   "version": "0.1.0",
-  "main": "dist/example/bundle.js",
+  "main": "dist/index.js",
   "description": "BackendKit for node.",
   "private": true,
   "license": "UNLICENSED",
   "repository": "crowdlift/backendkit",
   "homepage": "https://github.com/crowdlift/backendkit",
   "bin": {
+    "babel": "./node_modules/.bin/babel",
     "eslint": "./node_modules/.bin/eslint",
     "mocha": "./node_modules/.bin/mocha",
     "npm-run-all": "./node_modules/.bin/npm-run-all",
@@ -15,12 +16,12 @@
     "rollup": "./node_modules/.bin/rollup"
   },
   "scripts": {
+    "build": "babel lib --out-dir dist/lib --presets=es2015,stage-1",
     "prebuild": "npm-run-all -p clean lint",
-    "build": "rollup example/src/multiply.js --output dist/example/bundle.js --config",
+    "rollup": "rollup example/src/multiply.js --output example/dist/bundle.js --config",
     "build:watch": "yarn build -- --watch",
     "clean": "rimraf dist",
     "lint": "eslint example/src example/test",
-    "pretest": "QUIET=1 yarn build",
     "test": "NODE_ENV=test mocha --opts mocha.opts example/test/**/*.test.js",
     "test:watch": "yarn test -- --watch"
   },
