@@ -107,3 +107,4 @@ var config = function config() {
 };
 
 exports.default = config;
+module.exports = exports['default'];

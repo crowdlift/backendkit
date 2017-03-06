@@ -16,7 +16,7 @@
     "rollup": "./node_modules/.bin/rollup"
   },
   "scripts": {
-    "build": "babel lib --out-dir dist/lib --presets=es2015,stage-1",
+    "build": "babel lib --out-dir dist/lib --presets=es2015,stage-1 --plugins=dev-expression,add-module-exports",
     "prebuild": "npm-run-all -p clean lint",
     "rollup": "rollup example/src/multiply.js --output example/dist/bundle.js --config",
     "build:watch": "yarn build -- --watch",
@@ -29,6 +29,7 @@
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.1.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-dev-expression": "^0.2.1",
     "babel-plugin-istanbul": "^4.0.0",
     "babel-plugin-lodash": "^3.2.11",
