@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    "eslint-plugin-chai-expect",
+  ],
+  "env": {
+    "mocha": true,
+  },
+  "rules": {
+    "no-unused-expressions": 0,
+    "chai-expect/missing-assertion": 2,
+    "chai-expect/terminating-properties": 2,
+  },
+}
