@@ -3,7 +3,7 @@ import rollupConfig from './lib/rollup/config';
 const pkg = require('./package.json');
 
 const config = rollupConfig({
-  profile: 'serverless',
+  bundleDependencies: false,
   quiet: process.env.QUIET,
   pkg,
 });
